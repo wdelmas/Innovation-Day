@@ -45,7 +45,8 @@ analysisResult.forEach((result , fid) => {
     console.group('Input #' + iid)
     console.log(child)
 
-    const input = $(child.selector())[0]
+    const inputSelector = result.selector() + ' ' + child.selector()
+    const input = $(inputSelector)[0]
     let autofillValue = null
 
     let text = `I detected an input of type <b>"${child.attr}"</b>`
@@ -79,10 +80,22 @@ analysisResult.forEach((result , fid) => {
     const textElement = document.createElement("div")
     textElement.innerHTML = text
 
+    const tourElement = document.createElement("div")
+    tourElement.style.position = "absolute"
+    tourElement.style.backgroundColor = "#D93600"
+    tourElement.style.left = "100px"
+    tourElement.style.top = "100px"
+    tourElement.style.width = "100px"
+    tourElement.style.height = "20px"
+    tourElement.id = `tour-step-${fid}-${iid}`
+
+    window.document.body.appendChild(tourElement)
+
     tour.addStep({
       title: `form #${fid + 1} input #${iid + 1}`,
       text: textElement,
-      attachTo: child.selector() + ' right',
+      attachTo: `#${tourElement.id} right`,
+      //attachTo: inputSelector + ' right',
       when: {
         show: function() {
           if (autofillValue) input.value = autofillValue
