@@ -5,13 +5,13 @@ window._user_data = [
   {
     "login": "Momo49",
     "email": "maurice49@caramail.fr",
-    "firstName": "Maurice",
-    "middleName": "DD",
-    "lastName": "Labutte",
-    "lastName2": "Guicheaud",
+    "firstname": "Maurice",
+    "middlename": "DD",
+    "lastname": "Labutte",
+    "lastname2": "Guicheaud",
     "pseudo": "SuperMaurice",
-    "birthDate": "10-10-1940",
-    "birthPlace": "Paris",
+    "birthdate": "10-10-1940",
+    "birthplace": "Paris",
     "password": "fdKLKK"
   },
   {

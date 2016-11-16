@@ -38,5 +38,7 @@ function domNode() {
 
 function getVirtualDom(){
     var nodes = getNodes()
-    return buildvirtualDOm(nodes)
+    var dom =  buildvirtualDOm(nodes)
+    console.log(dom)
+    return dom
 }

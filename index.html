@@ -4,46 +4,19 @@
   <meta name="password-manager-friendly" value="true" />
 
 
-  <style type="text/css">
-    body {
-      padding: 50px;
-      /*width: 100vw;
-      height: 100vh;*/
-    }
-    form {
-      margin: 50px;
-      width: 300px;
-    }
-    .shepherd-target.shepherd-enabled {
-      outline: solid 3px red;
-    }
-    label {
-      margin: 10px;
-    }
-  </style>
 
-  <link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/float-label-css/v1.0.1/dist/float-label.min.css"/>
-  <script src="https://cdn.rawgit.com/alertifyjs/alertify.js/v1.0.11/src/js/alertify.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/alertifyjs/alertify.js/v1.0.11/dist/css/alertify.css" />
-  <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/shepherd/1.8.1/js/shepherd.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/shepherd/1.8.1/css/shepherd-theme-arrows.css" />
-  <script
-    src="https://code.jquery.com/jquery-3.1.1.min.js"
-    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
 </head>
 
 
 <p>
   <form pm="login-group">
     <label class="has-float-label">
-      <input id="input01" type="email" placeholder="email@example.com" pm="email"/>
+      <input id="input01" type="email" placeholder="email@example.com" pm="login-field"/>
       <span>Email</span>
     </label>
 
     <label class="has-float-label">
-      <input id="input02" type="password" placeholder="xyz" pm="password"/>
+      <input id="input02" type="password" placeholder="xyz" pm="password-field"/>
       <span>password</span>
     </label>
   </form>
@@ -52,17 +25,29 @@
 <p>
   <form pm="register-group">
     <label class="has-float-label">
-      <input id="input03" type="text" placeholder="first name" pm="firstName"/>
+      <input id="input03" type="text" placeholder="first name" pm="firstname-field"/>
       <span>First name</span>
     </label>
 
     <label class="has-float-label">
-      <input id="input04" type="text" placeholder="last name" pm="lastName"/>
+      <input id="input04" type="text" placeholder="last name" pm="lastname-field"/>
       <span>Last name</span>
     </label>
   </form>
 </p>
 
-<script src="engine.js" type="application/javascript"></script>
-<script src="user-data.js" type="application/javascript"></script>
-<script src="autofill.js" type="application/javascript"></script>
+
+<link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/float-label-css/v1.0.1/dist/float-label.min.css"/>
+<script src="https://cdn.rawgit.com/alertifyjs/alertify.js/v1.0.11/src/js/alertify.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/alertifyjs/alertify.js/v1.0.11/dist/css/alertify.css" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/shepherd/1.8.1/js/shepherd.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/shepherd/1.8.1/css/shepherd-theme-arrows.css" />
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
+  <script src="engine.js" type="application/javascript"></script>
+  <script src="user-data.js" type="application/javascript"></script>
+  <script src="autofill.js" type="application/javascript"></script>
