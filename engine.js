@@ -22,6 +22,7 @@ function buildvirtualDOm(nodes){
     var tmpNode = new domNode()
     for(var i = 0; i < nodes.length;i++){
         if(nodes[i].attr.indexOf('group')> 1){
+            tmpNode.type = 'group'
             virtualDom.push(Object.assign(tmpNode,nodes[i]))
             tmpNode = new domNode()
         }else{
