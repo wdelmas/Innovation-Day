@@ -17,7 +17,7 @@ function getNodes(){
     return nodes.reverse()
 }
 
-function buildvirtualDOm(nodes){
+function buildVirtualDom(nodes){
     var virtualDom = []
     var tmpNode = new domNode()
     for(var i = 0; i < nodes.length;i++){
@@ -38,7 +38,6 @@ function domNode() {
 
 function getVirtualDom(){
     var nodes = getNodes()
-    var dom =  buildvirtualDOm(nodes)
-    console.log(dom)
+    var dom =  buildVirtualDom(nodes)
     return dom
 }

@@ -17,6 +17,20 @@ const tour = new Shepherd.Tour({
 console.groupCollapsed('Analysis')
 alertify.log("Starting analysis...")
 
+const pmfMeta = (function getPmfMeta() {
+  const metas = document.getElementsByTagName('meta');
+
+  for (let i=0; i<metas.length; i++) {
+    if (metas[i].getAttribute("name") == "password-manager-friendly") {
+      return metas[i]
+    }
+  }
+})()
+console.log('PMF meta', pmfMeta)
+if (pmfMeta && Boolean(pmfMeta.getAttribute("value"))) {
+  alertify.success("This site reports itself as password-manager-friendly !")
+}
+
 const analysisResult = getVirtualDom()
 console.log('result', analysisResult)
 
