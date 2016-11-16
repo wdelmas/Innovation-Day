@@ -26,7 +26,7 @@ function buildvirtualDOm(nodes){
             virtualDom.push(Object.assign(tmpNode,nodes[i]))
             tmpNode = new domNode()
         }else{
-            tmpNode.children.push(nodes[i])
+            tmpNode.children.unshift(nodes[i])
         }
     }
     return virtualDom.reverse()

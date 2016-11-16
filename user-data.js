@@ -3,24 +3,26 @@ console.groupCollapsed('User data')
 
 window._user_data = [
   {
-    "FirstName": "Maurice",
-    "MiddleName": "DD",
-    "LastName": "Labutte",
-    "LastName2": "Guicheaud",
-    "Pseudo": "SuperMaurice",
-    "BirthDate": "10-10-1940",
-    "BirthPlace": "Paris",
-    "Password": "fdKLKK"
+    "login": "Momo49",
+    "email": "maurice49@caramail.fr",
+    "firstName": "Maurice",
+    "middleName": "DD",
+    "lastName": "Labutte",
+    "lastName2": "Guicheaud",
+    "pseudo": "SuperMaurice",
+    "birthDate": "10-10-1940",
+    "birthPlace": "Paris",
+    "password": "fdKLKK"
   },
   {
-    "FirstName": "André",
-    "MiddleName": null,
-    "LastName": "Lagarde",
-    "LastName2": null,
-    "Pseudo": "BG93",
-    "BirthDate": "08-09-1987",
-    "BirthPlace": "Montreuil",
-    "Password": "fdsmkl34KMrlmlg"
+    "firstName": "André",
+    "middleName": null,
+    "lastName": "Lagarde",
+    "lastName2": null,
+    "pseudo": "BG93",
+    "birthDate": "08-09-1987",
+    "birthPlace": "Montreuil",
+    "password": "fdsmkl34KMrlmlg"
   }
 ]
 
