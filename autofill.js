@@ -45,6 +45,7 @@ analysisResult.forEach((result , fid) => {
     title: 'form #' + (fid + 1),
     text: 'I detected a form...',
     attachTo: `#${formElement.id} right`,
+    advanceOn: 'body click',
   })
 
   result.children.forEach((child, iid) => {
@@ -110,6 +111,7 @@ analysisResult.forEach((result , fid) => {
       text: textElement,
       attachTo: `#${tourElement.id} right`,
       //attachTo: inputSelector + ' right',
+      advanceOn: 'body click',
       when: {
         show: function() {
           if (autofillValue) input.value = autofillValue
@@ -126,6 +128,7 @@ analysisResult.forEach((result , fid) => {
 tour.addStep({
   title: 'All done',
   text: 'Thank you for watching !',
+  advanceOn: 'body click'
 });
 
 tour.start()
