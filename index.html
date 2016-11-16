@@ -2,11 +2,22 @@
 <head>
   <meta  />
 <body>
-  <form pm-type="login">
-    <input type="text" pm-type="login"/>
-    <input type="password" pm-type="password"/>
+  <form pm="login-group">
+    <input type="text" pm="login-field"/>
+    <input type="password" pm="password-field"/>
   </form>
+
+  <form pm="register-group">
+    <input type="text" pm="firstName-field"/>
+    <input type="password" pm="lastName-field"/>
+  </form>
+  <script
+          src="https://code.jquery.com/jquery-3.1.1.min.js"
+          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+          crossorigin="anonymous"></script>
 <script src="engine.js" type="application/javascript"></script>
+<script src="autofill.js" type="application/javascript"></script>
+
 </body>
 </head>
 </html>

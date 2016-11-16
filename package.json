@@ -1,0 +1,22 @@
+{
+  "name": "innocation-day",
+  "version": "1.0.0",
+  "description": "blabla",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wdelmas/Innovation-Day.git"
+  },
+  "author": "Dashlane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wdelmas/Innovation-Day/issues"
+  },
+  "homepage": "https://github.com/wdelmas/Innovation-Day#readme",
+    "devDependencies": {
+        "cheerio": "^0.22.0"    
+  }
+}
