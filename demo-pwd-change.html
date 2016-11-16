@@ -10,7 +10,7 @@
       height: 100vh;*/
     }
     form {
-      margin: 50px;
+      margin: 50px 50px 50px 0;
       width: 300px;
     }
     .shepherd-target.shepherd-enabled {
@@ -33,32 +33,24 @@
     crossorigin="anonymous"></script>
 </head>
 
-
+<h1>Change password</h1>
 <p>
-  <form pm="login-group">
+  <form pm="change-pasword-group">
+
     <label class="has-float-label">
-      <input id="input01" type="email" placeholder="email@example.com" pm="email"/>
-      <span>Email</span>
+      <input id="input01" type="password" placeholder="xyz" pm="password"/>
+      <span>Existing password</span>
     </label>
 
     <label class="has-float-label">
-      <input id="input02" type="password" placeholder="xyz" pm="password"/>
-      <span>password</span>
-    </label>
-  </form>
-</p>
-
-<p>
-  <form pm="register-group">
-    <label class="has-float-label">
-      <input id="input03" type="text" placeholder="first name" pm="firstName"/>
-      <span>First name</span>
+      <input id="input02" type="password" placeholder="xyz" pm="candidate-password"/>
+      <span>New password</span>
     </label>
 
-    <label class="has-float-label">
-      <input id="input04" type="text" placeholder="last name" pm="lastName"/>
-      <span>Last name</span>
-    </label>
+  <label class="has-float-label">
+    <input id="input03" type="password" placeholder="xyz" pm="candidate-password-repeated"/>
+    <span>New password (again)</span>
+  </label>
   </form>
 </p>
 

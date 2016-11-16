@@ -20,7 +20,7 @@ alertify.log("Starting analysis...")
 const analysisResult = getVirtualDom()
 console.log('result', analysisResult)
 
-alertify.success("Analysis done !")
+alertify.log("Analysis done.")
 console.groupEnd()
 
 ////////////////////////////////////
@@ -36,7 +36,7 @@ analysisResult.forEach((result , fid) => {
   console.log(result)
 
   tour.addStep({
-    title: 'Detected form #' + (fid + 1),
+    title: 'form #' + (fid + 1),
     text: 'I detected a form...',
     attachTo: result.selector() + ' right',
   })
@@ -45,19 +45,37 @@ analysisResult.forEach((result , fid) => {
     console.group('Input #' + iid)
     console.log(child)
 
+    const input = $(child.selector())[0]
+    let autofillValue = null
+
+    let text = `I detected an input of type <b>"${child.attr}"</b>`
+
+    switch(user[child.attr]) {
+      default:
+        if (user[child.attr]) {
+          text += `<br/>I <b>recognize it</b> and <b>know a value</b> for it !"</b>`
+          autofillValue = user[child.attr]
+        }
+        else {
+          text += `<br/>I don't recognize that, sorry :-(</b>`
+        }
+        break
+    }
+
+    console.log(text)
+    const textElement = document.createElement("div")
+    textElement.innerHTML = text
+
     tour.addStep({
       title: `form #${fid + 1} input #${iid + 1}`,
-      text: `I detected an input of type "${child.attr}"`,
+      text: textElement,
       attachTo: child.selector() + ' right',
       when: {
         show: function() {
-          const input = $(child.selector())[0]
-          input.value = user[child.attr]
+          if (autofillValue) input.value = autofillValue
         }
       }
     })
-
-
 
     console.groupEnd()
   })
