@@ -8,7 +8,7 @@ alertify
 const tour = new Shepherd.Tour({
   defaults: {
     classes: 'shepherd-theme-arrows',
-    scrollTo: true,
+    scrollTo: false,
   }
 })
 
@@ -76,17 +76,18 @@ analysisResult.forEach((result , fid) => {
     if (autofillValue)
       text += `<br/>Autofilling with "<b>${autofillValue}</b>"...</b>`
 
-    console.log(text)
     const textElement = document.createElement("div")
     textElement.innerHTML = text
 
+    const inputOffset = $(input).offset()
     const tourElement = document.createElement("div")
     tourElement.style.position = "absolute"
-    tourElement.style.backgroundColor = "#D93600"
-    tourElement.style.left = "100px"
-    tourElement.style.top = "100px"
-    tourElement.style.width = "100px"
-    tourElement.style.height = "20px"
+    tourElement.style.backgroundColor = "red"
+    tourElement.style.opacity = 0.01
+    tourElement.style.left = `${inputOffset.left}px`
+    tourElement.style.top = `${inputOffset.top}px`
+    tourElement.style.width = `${$(input).outerWidth()}px`
+    tourElement.style.height = `${$(input).outerHeight()}px`
     tourElement.id = `tour-step-${fid}-${iid}`
 
     window.document.body.appendChild(tourElement)
