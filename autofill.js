@@ -93,15 +93,13 @@ analysisResult.forEach((result , fid) => {
     console.groupEnd()
   })
 
-  /*
-  tour.addStep({
-    title: 'End of form #' + (fid + 1),
-    text: '..',
-    attachTo: result.selector() + ' right',
-  })*/
-
   console.groupEnd()
 })
+
+tour.addStep({
+  title: 'All done',
+  text: 'Thank you for watching !',
+});
 
 tour.start()
 console.groupEnd()
