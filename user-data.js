@@ -1,4 +1,6 @@
 
+console.groupCollapsed('User data')
+
 window._user_data = [
   {
     "FirstName": "Maurice",
@@ -21,3 +23,6 @@ window._user_data = [
     "Password": "fdsmkl34KMrlmlg"
   }
 ]
+
+console.log(window._user_data)
+console.groupEnd()
