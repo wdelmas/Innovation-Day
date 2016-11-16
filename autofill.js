@@ -27,6 +27,7 @@ console.groupEnd()
 
 console.group('Action')
 const user = window._user_data[0]
+const groupCount = {}
 
 analysisResult.forEach((result , fid) => {
   "use strict";
@@ -34,21 +35,24 @@ analysisResult.forEach((result , fid) => {
   console.group('Result #' + fid)
   console.log(result)
 
-  const formElement = $(result.selector())[fid]
-  formElement.id = `from-${fid}`
+  groupCount[result.selector()] = groupCount[result.selector()] | 0
+  groupCount[result.selector()]++
+
+  const formElement = $(result.selector())[groupCount[result.selector()] - 1]
+  formElement.id = `form-${result.attr}-${fid}`
 
   tour.addStep({
     title: 'form #' + (fid + 1),
     text: 'I detected a form...',
-    attachTo: result.selector() + ' right',
+    attachTo: `#${formElement.id} right`,
   })
 
   result.children.forEach((child, iid) => {
     console.group('Input #' + iid)
     console.log(child)
 
-    const inputSelector = `#from-${fid} ` + child.selector()
-    console.log("selector", inputSelector)
+    const inputSelector = `#${formElement.id} ` + child.selector()
+    console.log("selector:", inputSelector)
     const input = $(inputSelector)[0]
     let autofillValue = null
 
@@ -76,8 +80,15 @@ analysisResult.forEach((result , fid) => {
         break
     }
 
-    if (autofillValue)
-      text += `<br/>Autofilling with "<b>${autofillValue}</b>"...</b>`
+
+    if (autofillValue) {
+      if (groupCount[result.selector()] > 1) {
+        text += `<br/>But <b>NOT</b> autofilling since this is a repeated group !</b>`
+        autofillValue = null
+      }
+      else
+        text += `<br/>Autofilling with "<b>${autofillValue}</b>"...</b>`
+    }
 
     const textElement = document.createElement("div")
     textElement.innerHTML = text
