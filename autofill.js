@@ -50,7 +50,17 @@ analysisResult.forEach((result , fid) => {
 
     let text = `I detected an input of type <b>"${child.attr}"</b>`
 
-    switch(user[child.attr]) {
+    switch(child.attr) {
+      case 'candidate-password':
+        text += `<br/>I <b>recognize it</b> and can <b>generate</b> a value for it !"</b>`
+        autofillValue = '2OHjd^GQaL!u' // yes, cheating ;)
+        break;
+
+      case 'candidate-password-repeated':
+        text += `<br/>I <b>recognize it</b> and <b>know a value</b> for it !"</b>`
+        autofillValue = '2OHjd^GQaL!u' // yes, cheating ;)
+        break;
+
       default:
         if (user[child.attr]) {
           text += `<br/>I <b>recognize it</b> and <b>know a value</b> for it !"</b>`
@@ -61,6 +71,9 @@ analysisResult.forEach((result , fid) => {
         }
         break
     }
+
+    if (autofillValue)
+      text += `<br/>Autofilling with "<b>${autofillValue}</b>"...</b>`
 
     console.log(text)
     const textElement = document.createElement("div")
