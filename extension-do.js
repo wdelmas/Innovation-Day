@@ -158,6 +158,12 @@ tour.addStep({
   })
 
   tour.addStep({
+    title: 'Summary',
+    text: 'You have X errors and Y warnings.',
+    advanceOn: 'body click'
+  });
+
+  tour.addStep({
     title: 'All done',
     text: 'Thank you for watching !',
     advanceOn: 'body click'
